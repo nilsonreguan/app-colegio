@@ -27,11 +27,11 @@
     var pushNotification;
 
     function onDeviceReady() {
-        $("#app-status-ul").append('<li>Device ok. Evento ativado.</li>');
+        $("#app-status-ul").append('');
 
         document.addEventListener("backbutton", function(e)
         {
-            $("#app-status-ul").append('<li>backbutton clicado.</li>');
+            $("#app-status-ul").append('');
 
             if( $("#home").length > 0)
             {
@@ -49,7 +49,7 @@
         try
         {
             pushNotification = window.plugins.pushNotification;
-            $("#app-status-ul").append('<li>Registrando o ' + device.platform + '</li>');
+            $("#app-status-ul").append('<li>Ingreso desde un ' + device.platform + '</li>');
             if (device.platform == 'android' || device.platform == 'Android' ||
                     device.platform == 'amazon-fireos' ) {
                 pushNotification.register(successHandler, errorHandler, {"senderID":"469201422848","ecb":"onNotification"});		// required!
@@ -59,7 +59,7 @@
         }
         catch(err)
         {
-            txt="Um erro ocorreu.\n\n";
+            txt="Error.\n\n";
             txt+="Descri��o do erro: " + err.message + "\n\n";
             alert(txt);
         }
@@ -237,7 +237,7 @@
                 <li><a href="#home" data-icon="home" data-transition="flow">Inicio</a></li>
                 <li><a href="#actividades" data-icon="calendar" data-transition="flow">Calendario</a></li>
                 <li><a href="#" data-icon="info">Circulares</a></li>
-                <li><a href="#" data-icon="check">Asistencia</a></li>
+                <li><a href="#asistencia" data-icon="check" data-transition="flow">Asistencia</a></li>
             </ul>
         </div>
     </div><!-- /footer -->
@@ -267,11 +267,73 @@
                 <li><a href="#home" data-icon="home" data-transition="flow">Inicio</a></li>
                 <li><a href="#actividades" data-icon="calendar" data-transition="flow">Calendario</a></li>
                 <li><a href="#" data-icon="info">Circulares</a></li>
-                <li><a href="#" data-icon="check">Asistencia</a></li>
+                <li><a href="#asistencia" data-icon="check" data-transition="flow">Asistencia</a></li>
             </ul>
         </div>
     </div><!-- /footer -->
 </div><!-- /page -->
+
+
+
+
+
+
+<div data-role="page" id="asistencia">
+
+    <div data-role="header" data-theme="b">
+        <h1>Asistencia</h1>
+    </div><!-- /header -->
+
+    <div data-role="content" id="content-cal">
+        <ul data-role="listview">
+            <li><a href="#actividades-actividades">Actividades <span class="ui-li-count">3</span></a></li>
+            <li><a href="#actividades-reuniones">Reuniones <span class="ui-li-count">5</span></a></li>
+            <li><a href="#actividades-asuetos">Asuetos <span class="ui-li-count">6</span></a></li>
+            <li><a href="#actividades-deportivos">Calendario deportivo <span class="ui-li-count">2</span></a></li>
+        </ul>
+
+
+
+    </div><!-- /content -->
+
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar" data-iconpos="bottom">
+            <ul>
+                <li><a href="#home" data-icon="home" data-transition="flow">Inicio</a></li>
+                <li><a href="#actividades" data-icon="calendar" data-transition="flow">Calendario</a></li>
+                <li><a href="#" data-icon="info">Circulares</a></li>
+                <li><a href="#asistencia" data-icon="check" data-transition="flow">Asistencia</a></li>
+            </ul>
+        </div>
+    </div><!-- /footer -->
+</div><!-- /page -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <!--Paginas actividades-->
